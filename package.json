@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "start:socket": "nodemon sources/socket/index.js",
+        "start:client": "vite"
+    },
+    "dependencies": {
+        "socket.io": "4.5.2",
+        "socket.io-client": "4.5.2",
+        "up": "^1.0.2"
+    },
+    "devDependencies": {
+        "nodemon": "2.0.20",
+        "vite": "3.1.2"
+    }
+}
