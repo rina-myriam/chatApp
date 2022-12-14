@@ -20,13 +20,13 @@ docker-compose exec node npm install
 ### Client Startup
 
 ```bash
-docker-compose exec node npm start:client
+docker-compose exec node npm run start:client
 ```
 
 ### Socket Startup
 
 ```bash
-docker-compose exec node npm start:socket
+docker-compose exec node npm run start:socket
 ```
 
 ### Docker Compose Shutdown

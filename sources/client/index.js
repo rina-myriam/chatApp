@@ -1,66 +1,96 @@
-import { io } from "socket.io-client"
+import { io } from "socket.io-client";
 
-const messageForm = document.getElementById("message")
+const chatForm = document.getElementById('chat-form');
+const chatMessages = document.querySelector('.chat-messages');
+const roomName = document.getElementById('room-name');
+const userList = document.getElementById('users');
 
-if (!messageForm) {
-    throw new Error("Message form not found")
+const socket = io("ws://localhost:9000");
+
+let url = window.location.search;
+let searchParams = new URLSearchParams(url);
+let username = searchParams.get('pseudo');
+let room = searchParams.get('room');
+
+// Join chatRoom  
+socket.emit("joinRoom", { username, room });
+
+// Get room and users
+socket.on('roomUsers', ({ room, users }) => {
+     outputRoomName(room);
+     outputUsers(users);
+});
+   
+// Message from server
+socket.on('message', (message) => {
+  console.log(message);
+  outputMessage(message);
+
+  // Scroll down
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+});
+
+// Message submit
+chatForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Get message text
+  let msg = e.target.elements.msg.value;
+
+  msg = msg.trim();
+
+  if (!msg) {
+    return false;
+  }
+
+  // Emit message to server
+  socket.emit('chatMessage', msg);
+
+  // Clear input
+  e.target.elements.msg.value = '';
+  e.target.elements.msg.focus();
+});
+
+// Output message to DOM
+function outputMessage(message) {
+  const div = document.createElement('div');
+  div.classList.add('message');
+  const p = document.createElement('p');
+  p.classList.add('meta');
+  p.innerText = message.username;
+  p.innerHTML += `<span>${message.time}</span>`;
+  div.appendChild(p);
+  const para = document.createElement('p');
+  para.classList.add('text');
+  para.innerText = message.text;
+  div.appendChild(para);
+  document.querySelector('.chat-messages').appendChild(div);
 }
 
-const socket = io("ws://localhost:9000")
+// Add room name to DOM
+function outputRoomName(room) {
+     roomName.innerHTML = room;
+}
 
-socket.on("connect", () => {
-    const identifierTitle = document.getElementById("identifier")
-
-    if (!identifierTitle) {
-        throw new Error("Identifier title not found")
-    }
-
-    identifierTitle.innerText = `Client #${socket.id}`
-})
-
-socket.on("message", ({client, content}) => {
-    const messagesContainer = document.getElementById("messages")
-
-    if (!messagesContainer) {
-        throw new Error("Messages container not found")
-    }
-
-    const messageParagraph = document.createElement("p")
-
-    messageParagraph.innerText = `[#${client}] ${content}`
-
-    messagesContainer.appendChild(messageParagraph)
-})
-
-messageForm.addEventListener("submit", event => {
-    const contentInput = event.target.content
-    const clientInput = event.target.client
-    const messagesContainer = document.getElementById("messages")
-
-    if (!contentInput) {
-        throw new Error("Content input not found")
-    }
-
-    if (!clientInput) {
-        throw new Error("Client input not found")
-    }
+// Add users to DOM
+function outputUsers(users) {
+     console.log({users})
+      userList.innerHTML = '';
+      users.forEach((user) => {
+        const li = document.createElement('li');
+        li.innerText = user.username;
+        userList.appendChild(li);
+     });
+}
     
-    if (!messagesContainer) {
-        throw new Error("Messages container not found")
-    }
+//Prompt the user before leave chat room
+document.getElementById('leave-btn').addEventListener('click', () => {
+     const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
+     if (leaveRoom) {
+          window.location = '../index.html';
+     } else {
+     }
+});
 
-    const content = contentInput.value
-    const client = clientInput.value
-    const messageParagraph = document.createElement("p")
 
-    messageParagraph.innerText = `[#${socket.id}] ${content}`
 
-    messagesContainer.appendChild(messageParagraph)
-
-    socket.emit("message", {
-        content,
-        client
-    })
-
-    event.preventDefault()
-})

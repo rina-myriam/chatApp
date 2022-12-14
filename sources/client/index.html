@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html>
+    <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Chat App</title>
+	</head>
     <body>
-        <h1 id="identifier"></h1>
-        <div id="messages"></div>
-        <form id="message">
+        <form id="chatspace" action="chat.html">
             <div>
-                <label for="client">Client</label>
-                <input id="client" name="client" value="">
+                <label for="pseudo">Pseudo</label>
+                <input id="pseudo" name="pseudo" value="" required>
             </div>
-            <div>
-                <label for="content">Content</label>
-                <input id="content" name="content" value="Hello, world!">
+            <div class="form-control">
+                <label for="room">Chat Channel</label>
+                <select name="room" id="room">
+                    <option value="Business">Business </option>
+                    <option value="Technology">Technology</option>
+                    <option value="Sport">Sports</option>
+                    <option value="news">International News</option>
+                    <option value="cats">Just Cats</option>
+                </select>
             </div>
-            <button type="submit">Send</button>
+            <div class="flex">
+               <button type="submit" class="btn">Login to Chat</button>
+            </div>
         </form>
-        <script src="./index.js" type="module"></script>
     </body>
 </html>
