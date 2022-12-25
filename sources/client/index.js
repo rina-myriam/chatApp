@@ -4,8 +4,9 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
-
 const socket = io("ws://localhost:9000");
+
+const countUser = document.querySelector('.count-user');
 
 let url = window.location.search;
 let searchParams = new URLSearchParams(url);
@@ -19,6 +20,7 @@ socket.emit("joinRoom", { username, room });
 socket.on('roomUsers', ({ room, users }) => {
      outputRoomName(room);
      outputUsers(users);
+     countUsers(users);
 });
    
 // Message from server
@@ -65,6 +67,7 @@ function outputMessage(message) {
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
+
 }
 
 // Add room name to DOM
@@ -79,8 +82,10 @@ function outputUsers(users) {
       users.forEach((user) => {
         const li = document.createElement('li');
         li.innerText = user.username;
+        li.innerHTML += `<span class="green-dot"></span>`;
         userList.appendChild(li);
      });
+     
 }
     
 //Prompt the user before leave chat room
@@ -92,5 +97,7 @@ document.getElementById('leave-btn').addEventListener('click', () => {
      }
 });
 
-
-
+// Count users
+function countUsers(users) {
+     countUser.innerHTML = users.length;
+}
