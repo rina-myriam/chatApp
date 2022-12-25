@@ -246,3 +246,21 @@ i.fas.fa-paper-plane{
 		display: none;
 	}
 }
+
+.green-dot {
+	margin-left: 10px;
+	height: 10px;
+	width: 10px;
+	background-color: #4CAF50;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.red-dot {
+	margin-left: 10px;
+	height: 10px;
+	width: 10px;
+	background-color: #f00;
+	border-radius: 50%;
+	display: inline-block;
+}
