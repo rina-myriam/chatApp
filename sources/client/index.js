@@ -5,8 +5,17 @@ const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 const socket = io("ws://localhost:9000");
+const maxUsers = 4 ;
 
 const countUser = document.querySelector('.count-user');
+
+// Check users in room and limit to 2
+socket.on('roomUsers', ({ room, users }) => {
+     if (users.length > maxUsers) {
+          alert('Room is full');
+          window.location = '../index.html';
+     }
+});
 
 let url = window.location.search;
 let searchParams = new URLSearchParams(url);
