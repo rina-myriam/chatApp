@@ -1,8 +1,6 @@
 import { Server } from "socket.io";
 import moment from "moment";
 
-const users = [];
-
 // Join user to chat
 function newUser(id, username, room) {
   const user = { id, username, room };
@@ -16,7 +14,7 @@ function formatMessage(username, text) {
   return {
     username,
     text,
-    time: moment().format('h:mm a')
+    time: moment().format('H:mm a')
   };
 }
 
@@ -45,14 +43,14 @@ const io = new Server(9000, {
     }
 })
 
+
 io.on('connection', socket => {
   socket.on('joinRoom', ({ username, room }) => {
     const user = newUser(socket.id, username, room);
 
     socket.join(user.room);
 
-     // General welcome
-     socket.emit('message', formatMessage("WebCage", 'Messages are limited to this room! '));
+     socket.emit('message', formatMessage("ChatApp", 'Messages are limited to this room! '));
 
      
     // Broadcast everytime users connects
@@ -60,7 +58,7 @@ io.on('connection', socket => {
       .to(user.room)
       .emit(
         'message',
-        formatMessage("WebCage", `${user.username} has joined the room`)
+        formatMessage("ChatApp", `${user.username} has joined the room`)
       );
 
     // Current active users and room name
@@ -69,6 +67,8 @@ io.on('connection', socket => {
       users: getIndividualRoomUsers(user.room)
     });
 
+    // get all clients connected
+    // console.log(Object.keys(io.engine.clients));
 
 
   });
@@ -85,7 +85,7 @@ io.on('connection', socket => {
     if (user) {
       io.to(user.room).emit(
         'message',
-        formatMessage("WebCage", `${user.username} has left the room`)
+        formatMessage("ChatApp", `${user.username} has left the room`)
       );
   
       // Current active users and room name
@@ -96,5 +96,13 @@ io.on('connection', socket => {
       }
   
     });
+
+    // Message to individual user
+    socket.on("messageToUser", ({client, content}) => {
+      socket.to(client).emit("messageToUser", {
+          client,
+          content
+      })
+  });
     
 })
