@@ -4,6 +4,10 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
+
+const f = document.getElementById("chatspace");
+const messageUserForm = document.getElementById("messageUser");
+
 const socket = io("ws://localhost:9000");
 const maxUsers = 4 ;
 
@@ -21,6 +25,28 @@ let url = window.location.search;
 let searchParams = new URLSearchParams(url);
 let username = searchParams.get('pseudo');
 let room = searchParams.get('room');
+
+
+socket.on("connect", () => {
+     const identifierTitle = document.getElementById("identifier")
+ 
+     identifierTitle.innerText = `Client #${socket.id}`
+ });
+ //celui vers qui on envoie recevra 
+ socket.on("messageToUser", ({client, content}) => {
+     const messagesContainer = document.getElementById("messagesUser")
+ 
+     const messageParagraph = document.createElement("p");
+     
+     let idConversation = client; 
+     console.log(idConversation);  
+      
+     //const containerConversation = document.getElementById(idConversation);
+
+     //messageParagraph.innerText = `[#${client}] ${content}`;
+     messageParagraph.innerText = `[#${client}] a dit: ${content}`;
+     messagesContainer.appendChild(messageParagraph)
+ });
 
 // Join chatRoom  
 socket.emit("joinRoom", { username, room });
@@ -106,7 +132,42 @@ document.getElementById('leave-btn').addEventListener('click', () => {
      }
 });
 
+
+//Sender part dialogue
+messageUserForm.addEventListener("submit", event => {
+     const contentInput = event.target.content;
+     const clientInput = event.target.client;
+     const messagesContainer = document.getElementById("messagesUser");
+     const content = contentInput.value;
+     const client = clientInput.value;
+     const messageParagraph = document.createElement("p");
+     let convUser;
+
+     if(document.getElementById(client)){
+
+          convUser = document.getElementById(client)
+
+     } else {
+          
+          convUser = document.createElement("div");
+          convUser.setAttribute("id", client);
+          convUser.classList.add("conversation");
+          
+     }
+     messageParagraph.innerText = `Vous: ${content}`
+     convUser.appendChild(messageParagraph);
+     messagesContainer.appendChild(convUser);
+ 
+     socket.emit("messageToUser", {
+         content,
+         client
+     })
+ 
+     event.preventDefault()
+ })
+
 // Count users
 function countUsers(users) {
      countUser.innerHTML = users.length;
 }
+

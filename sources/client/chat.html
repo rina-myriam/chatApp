@@ -33,12 +33,28 @@
                   placeholder="Type a Message"
                   required
                   autocomplete="off"
+                  autofocus
                 />
                 <button type="submit" class="btn-plane"><i class="fas fa-paper-plane"></i> </button>
               </form>
             </div>
           </div>
-        
+
+
+          <h1 id="identifier"></h1>
+          <div id="messagesUser"></div>
+          <form id="messageUser">
+            <div>
+              <label for="client">Utilisateur</label>
+              <input id="client" name="client" value="">
+          </div>
+            <div>
+                <label for="content">Content</label>
+                <input id="content" name="content" value="Hello, world!">
+            </div>
+            <button type="submit">Send</button>
+          </form>
+          
           <script
             src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
             integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="

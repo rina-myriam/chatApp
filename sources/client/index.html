@@ -10,7 +10,11 @@
 			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
 			crossorigin="anonymous"
 		/>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+
 		<link rel="stylesheet" href="css/style.css" />
 		<title>Chat App</title>
         <style>
@@ -22,7 +26,7 @@
         <form id="chatspace" class="log-form" action="chat.html" >
             <div>
                 <label for="pseudo">Pseudo</label>
-                <input id="pseudo" name="pseudo" value="" required>
+                <input id="pseudo" name="pseudo" value="" required autofocus>
             </div>
             <div class="form-control">
                 <label for="room">Chat Channel</label>
@@ -38,5 +42,43 @@
                <button type="submit" class="btn">Login to Chat</button>
             </div>
         </form>
+        <p id="demo"></p>
+
+        <div id="body"> 
+          
+          <div id="chat-circle" class="btn btn-raised">
+                <div id="chat-overlay"></div>
+                <i class="material-symbols-outlined">
+                    forum
+                </i>
+          </div>
+          
+          <div class="chat-box">
+            <div class="chat-box-header">
+              ChatBot
+              <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+            </div>
+            <div class="chat-box-body">
+              <div class="chat-box-overlay">   
+              </div>
+              <div class="chat-logs">
+                <div class="talk-bubble tri-right left-in">
+                  <p>Vous souhaitez : </p>
+                  <button id="option1" class="talk-choice">Vérifier l’entretien de votre véhicule</button>
+                  <button id="option2" class="talk-choice">Des informations sur les véhicules</button>
+                  <button id="option3" class="talk-choice">Des informations de contact</button>
+                  <button id="option4" class="talk-choice">Arrêter le workflow</button>
+                </div>
+              
+              </div><!--chat-log -->
+            </div>
+            <div class="chat-input">      
+        
+                <input type="text" id="chat-input" placeholder="Send a message..."/>
+                
+            </div>
+          </div>
+        </div>
+      <script src="./chatbot.js" type="module"></script>
     </body>
 </html>
