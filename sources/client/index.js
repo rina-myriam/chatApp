@@ -4,10 +4,22 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
+
 const f = document.getElementById("chatspace");
 const messageUserForm = document.getElementById("messageUser");
 
 const socket = io("ws://localhost:9000");
+const maxUsers = 4 ;
+
+const countUser = document.querySelector('.count-user');
+
+// Check users in room and limit to 2
+socket.on('roomUsers', ({ room, users }) => {
+     if (users.length > maxUsers) {
+          alert('Room is full');
+          window.location = '../index.html';
+     }
+});
 
 let url = window.location.search;
 let searchParams = new URLSearchParams(url);
@@ -43,6 +55,7 @@ socket.emit("joinRoom", { username, room });
 socket.on('roomUsers', ({ room, users }) => {
      outputRoomName(room);
      outputUsers(users);
+     countUsers(users);
 });
    
 // Message from server
@@ -89,6 +102,7 @@ function outputMessage(message) {
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
+
 }
 
 // Add room name to DOM
@@ -103,8 +117,10 @@ function outputUsers(users) {
       users.forEach((user) => {
         const li = document.createElement('li');
         li.innerText = user.username;
+        li.innerHTML += `<span class="green-dot"></span>`;
         userList.appendChild(li);
      });
+     
 }
     
 //Prompt the user before leave chat room
@@ -115,6 +131,7 @@ document.getElementById('leave-btn').addEventListener('click', () => {
      } else {
      }
 });
+
 
 //Sender part dialogue
 messageUserForm.addEventListener("submit", event => {
@@ -149,4 +166,8 @@ messageUserForm.addEventListener("submit", event => {
      event.preventDefault()
  })
 
+// Count users
+function countUsers(users) {
+     countUser.innerHTML = users.length;
+}
 

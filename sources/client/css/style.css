@@ -15,7 +15,7 @@
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-size: 16px;
 	background: var(--light-color);
 	margin: 20px;
@@ -46,6 +46,7 @@ a {
 	background: #fff;
 	margin: 30px auto;
 	overflow: hidden;
+	border-radius: 5px;
 
 }
 
@@ -531,3 +532,72 @@ i.fas.fa-paper-plane{
 	width: 150px;
 	font-family: Tahoma, sans-serif;
   }
+
+.green-dot {
+	margin-left: 10px;
+	height: 10px;
+	width: 10px;
+	background-color: #4CAF50;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.red-dot {
+	margin-left: 10px;
+	height: 10px;
+	width: 10px;
+	background-color: #f00;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+
+           
+.title {
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 700;
+	margin-top: 2rem;
+}
+.log-form {
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 2rem;
+	padding: 2rem;
+	background-color: rgba(255, 255, 255, 0.3) ;
+	border-radius: 5px;
+}
+
+.log-form div {
+	margin-bottom: 1rem;
+}
+
+.log-form label {
+	margin-bottom: 0.5rem;
+	font-size: 16px;
+}
+.log-form input {
+	width: 60%;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.log-form select {
+	width: 60%;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.log-form button {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: black;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+}
+

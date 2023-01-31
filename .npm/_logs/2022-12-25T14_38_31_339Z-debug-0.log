@@ -1,0 +1,261 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@8.6.0
+2 info using node@v18.0.0
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:project Completed in 7ms
+10 timing config:load:file:/home/node/.npmrc Completed in 1ms
+11 timing config:load:user Completed in 1ms
+12 timing config:load:file:/usr/local/etc/npmrc Completed in 0ms
+13 timing config:load:global Completed in 0ms
+14 timing config:load:validate Completed in 0ms
+15 timing config:load:credentials Completed in 1ms
+16 timing config:load:setEnvs Completed in 1ms
+17 timing config:load Completed in 14ms
+18 timing npm:load:configload Completed in 15ms
+19 timing npm:load:mkdirpcache Completed in 1ms
+20 timing npm:load:mkdirplogs Completed in 2ms
+21 verbose title npm install
+22 verbose argv "install"
+23 timing npm:load:setTitle Completed in 0ms
+24 timing config:load:flatten Completed in 3ms
+25 timing npm:load:display Completed in 4ms
+26 verbose logfile logs-max:10 dir:/home/node/.npm/_logs
+27 verbose logfile /home/node/.npm/_logs/2022-12-25T14_38_31_339Z-debug-0.log
+28 timing npm:load:logFile Completed in 28ms
+29 timing npm:load:timers Completed in 0ms
+30 timing npm:load:configScope Completed in 0ms
+31 timing npm:load Completed in 54ms
+32 timing arborist:ctor Completed in 0ms
+33 silly logfile done cleaning log files
+34 timing idealTree:init Completed in 72ms
+35 timing idealTree:userRequests Completed in 0ms
+36 silly idealTree buildDeps
+37 timing idealTree:#root Completed in 0ms
+38 timing idealTree:buildDeps Completed in 4ms
+39 timing idealTree:fixDepFlags Completed in 0ms
+40 timing idealTree Completed in 83ms
+41 timing arborist:ctor Completed in 0ms
+42 timing reify:loadTrees Completed in 163ms
+43 timing reify:diffTrees Completed in 47ms
+44 silly reify moves {}
+45 timing reify:retireShallow Completed in 2ms
+46 timing reify:createSparse Completed in 92ms
+47 timing reify:loadBundles Completed in 0ms
+48 silly audit bulk request {
+48 silly audit   '@esbuild/linux-loong64': [ '0.15.7' ],
+48 silly audit   '@socket.io/component-emitter': [ '3.1.0' ],
+48 silly audit   '@types/cookie': [ '0.4.1' ],
+48 silly audit   '@types/cors': [ '2.8.12' ],
+48 silly audit   '@types/node': [ '18.7.18' ],
+48 silly audit   abbrev: [ '1.1.1' ],
+48 silly audit   accepts: [ '1.3.8' ],
+48 silly audit   anymatch: [ '3.1.2' ],
+48 silly audit   'balanced-match': [ '1.0.2' ],
+48 silly audit   base64id: [ '2.0.0' ],
+48 silly audit   'binary-extensions': [ '2.2.0' ],
+48 silly audit   'brace-expansion': [ '1.1.11' ],
+48 silly audit   braces: [ '3.0.2' ],
+48 silly audit   chokidar: [ '3.5.3' ],
+48 silly audit   'concat-map': [ '0.0.1' ],
+48 silly audit   cors: [ '2.8.5' ],
+48 silly audit   'engine.io': [ '6.2.0' ],
+48 silly audit   'engine.io-client': [ '6.2.2' ],
+48 silly audit   debug: [ '4.3.4', '3.2.7' ],
+48 silly audit   ms: [ '2.1.2', '2.1.3' ],
+48 silly audit   ws: [ '8.2.3' ],
+48 silly audit   'engine.io-parser': [ '5.0.4' ],
+48 silly audit   cookie: [ '0.4.2' ],
+48 silly audit   esbuild: [ '0.15.7' ],
+48 silly audit   'esbuild-android-64': [ '0.15.7' ],
+48 silly audit   'esbuild-android-arm64': [ '0.15.7' ],
+48 silly audit   'esbuild-darwin-64': [ '0.15.7' ],
+48 silly audit   'esbuild-darwin-arm64': [ '0.15.7' ],
+48 silly audit   'esbuild-freebsd-64': [ '0.15.7' ],
+48 silly audit   'esbuild-freebsd-arm64': [ '0.15.7' ],
+48 silly audit   'esbuild-linux-32': [ '0.15.7' ],
+48 silly audit   'esbuild-linux-64': [ '0.15.7' ],
+48 silly audit   'esbuild-linux-arm': [ '0.15.7' ],
+48 silly audit   'esbuild-linux-arm64': [ '0.15.7' ],
+48 silly audit   'esbuild-linux-mips64le': [ '0.15.7' ],
+48 silly audit   'esbuild-linux-ppc64le': [ '0.15.7' ],
+48 silly audit   'esbuild-linux-riscv64': [ '0.15.7' ],
+48 silly audit   'esbuild-linux-s390x': [ '0.15.7' ],
+48 silly audit   'esbuild-netbsd-64': [ '0.15.7' ],
+48 silly audit   'esbuild-openbsd-64': [ '0.15.7' ],
+48 silly audit   'esbuild-sunos-64': [ '0.15.7' ],
+48 silly audit   'esbuild-windows-32': [ '0.15.7' ],
+48 silly audit   'esbuild-windows-64': [ '0.15.7' ],
+48 silly audit   'esbuild-windows-arm64': [ '0.15.7' ],
+48 silly audit   'fill-range': [ '7.0.1' ],
+48 silly audit   fsevents: [ '2.3.2' ],
+48 silly audit   'function-bind': [ '1.1.1' ],
+48 silly audit   'glob-parent': [ '5.1.2' ],
+48 silly audit   has: [ '1.0.3' ],
+48 silly audit   'has-flag': [ '3.0.0' ],
+48 silly audit   'ignore-by-default': [ '1.0.1' ],
+48 silly audit   'is-binary-path': [ '2.1.0' ],
+48 silly audit   'is-core-module': [ '2.10.0' ],
+48 silly audit   'is-extglob': [ '2.1.1' ],
+48 silly audit   'is-glob': [ '4.0.3' ],
+48 silly audit   'is-number': [ '7.0.0' ],
+48 silly audit   'mime-db': [ '1.52.0' ],
+48 silly audit   'mime-types': [ '2.1.35' ],
+48 silly audit   minimatch: [ '3.1.2' ],
+48 silly audit   nanoid: [ '3.3.4' ],
+48 silly audit   negotiator: [ '0.6.3' ],
+48 silly audit   nodemon: [ '2.0.20' ],
+48 silly audit   nopt: [ '1.0.10' ],
+48 silly audit   'normalize-path': [ '3.0.0' ],
+48 silly audit   'object-assign': [ '4.1.1' ],
+48 silly audit   'path-parse': [ '1.0.7' ],
+48 silly audit   picocolors: [ '1.0.0' ],
+48 silly audit   picomatch: [ '2.3.1' ],
+48 silly audit   postcss: [ '8.4.16' ],
+48 silly audit   'pstree.remy': [ '1.1.8' ],
+48 silly audit   readdirp: [ '3.6.0' ],
+48 silly audit   resolve: [ '1.22.1' ],
+48 silly audit   rollup: [ '2.78.1' ],
+48 silly audit   semver: [ '5.7.1', '7.0.0' ],
+48 silly audit   'simple-update-notifier': [ '1.0.7' ],
+48 silly audit   'socket.io': [ '4.5.2' ],
+48 silly audit   'socket.io-adapter': [ '2.4.0' ],
+48 silly audit   'socket.io-client': [ '4.5.2' ],
+48 silly audit   'socket.io-parser': [ '4.2.1' ],
+48 silly audit   'source-map-js': [ '1.0.2' ],
+48 silly audit   'supports-color': [ '5.5.0' ],
+48 silly audit   'supports-preserve-symlinks-flag': [ '1.0.0' ],
+48 silly audit   'to-regex-range': [ '5.0.1' ],
+48 silly audit   touch: [ '3.1.0' ],
+48 silly audit   undefsafe: [ '2.0.5' ],
+48 silly audit   up: [ '1.0.2' ],
+48 silly audit   vary: [ '1.1.2' ],
+48 silly audit   vite: [ '3.1.2' ],
+48 silly audit   'xmlhttprequest-ssl': [ '2.0.0' ]
+48 silly audit }
+49 verbose reify failed optional dependency /home/node/node_modules/esbuild-windows-arm64
+50 silly reify mark deleted [ '/home/node/node_modules/esbuild-windows-arm64' ]
+51 verbose reify failed optional dependency /home/node/node_modules/esbuild-windows-64
+52 silly reify mark deleted [ '/home/node/node_modules/esbuild-windows-64' ]
+53 verbose reify failed optional dependency /home/node/node_modules/esbuild-windows-32
+54 silly reify mark deleted [ '/home/node/node_modules/esbuild-windows-32' ]
+55 verbose reify failed optional dependency /home/node/node_modules/esbuild-sunos-64
+56 silly reify mark deleted [ '/home/node/node_modules/esbuild-sunos-64' ]
+57 verbose reify failed optional dependency /home/node/node_modules/esbuild-openbsd-64
+58 silly reify mark deleted [ '/home/node/node_modules/esbuild-openbsd-64' ]
+59 verbose reify failed optional dependency /home/node/node_modules/esbuild-netbsd-64
+60 silly reify mark deleted [ '/home/node/node_modules/esbuild-netbsd-64' ]
+61 verbose reify failed optional dependency /home/node/node_modules/esbuild-linux-s390x
+62 silly reify mark deleted [ '/home/node/node_modules/esbuild-linux-s390x' ]
+63 verbose reify failed optional dependency /home/node/node_modules/esbuild-linux-riscv64
+64 silly reify mark deleted [ '/home/node/node_modules/esbuild-linux-riscv64' ]
+65 verbose reify failed optional dependency /home/node/node_modules/esbuild-linux-ppc64le
+66 silly reify mark deleted [ '/home/node/node_modules/esbuild-linux-ppc64le' ]
+67 verbose reify failed optional dependency /home/node/node_modules/esbuild-linux-mips64le
+68 silly reify mark deleted [ '/home/node/node_modules/esbuild-linux-mips64le' ]
+69 verbose reify failed optional dependency /home/node/node_modules/esbuild-linux-arm
+70 silly reify mark deleted [ '/home/node/node_modules/esbuild-linux-arm' ]
+71 verbose reify failed optional dependency /home/node/node_modules/esbuild-linux-64
+72 silly reify mark deleted [ '/home/node/node_modules/esbuild-linux-64' ]
+73 verbose reify failed optional dependency /home/node/node_modules/esbuild-linux-32
+74 silly reify mark deleted [ '/home/node/node_modules/esbuild-linux-32' ]
+75 verbose reify failed optional dependency /home/node/node_modules/esbuild-freebsd-arm64
+76 silly reify mark deleted [ '/home/node/node_modules/esbuild-freebsd-arm64' ]
+77 verbose reify failed optional dependency /home/node/node_modules/esbuild-freebsd-64
+78 silly reify mark deleted [ '/home/node/node_modules/esbuild-freebsd-64' ]
+79 verbose reify failed optional dependency /home/node/node_modules/esbuild-darwin-64
+80 silly reify mark deleted [ '/home/node/node_modules/esbuild-darwin-64' ]
+81 verbose reify failed optional dependency /home/node/node_modules/esbuild-android-arm64
+82 silly reify mark deleted [ '/home/node/node_modules/esbuild-android-arm64' ]
+83 verbose reify failed optional dependency /home/node/node_modules/esbuild-android-64
+84 silly reify mark deleted [ '/home/node/node_modules/esbuild-android-64' ]
+85 verbose reify failed optional dependency /home/node/node_modules/@esbuild/linux-loong64
+86 silly reify mark deleted [ '/home/node/node_modules/@esbuild/linux-loong64' ]
+87 timing reifyNode:node_modules/esbuild-windows-arm64 Completed in 126ms
+88 timing reifyNode:node_modules/esbuild-windows-64 Completed in 127ms
+89 timing reifyNode:node_modules/esbuild-windows-32 Completed in 127ms
+90 timing reifyNode:node_modules/esbuild-sunos-64 Completed in 128ms
+91 timing reifyNode:node_modules/esbuild-openbsd-64 Completed in 129ms
+92 timing reifyNode:node_modules/esbuild-netbsd-64 Completed in 130ms
+93 timing reifyNode:node_modules/esbuild-linux-s390x Completed in 131ms
+94 timing reifyNode:node_modules/esbuild-linux-riscv64 Completed in 132ms
+95 timing reifyNode:node_modules/esbuild-linux-ppc64le Completed in 133ms
+96 timing reifyNode:node_modules/esbuild-linux-mips64le Completed in 134ms
+97 timing reifyNode:node_modules/esbuild-linux-arm Completed in 134ms
+98 timing reifyNode:node_modules/esbuild-linux-64 Completed in 135ms
+99 timing reifyNode:node_modules/esbuild-linux-32 Completed in 136ms
+100 timing reifyNode:node_modules/esbuild-freebsd-arm64 Completed in 137ms
+101 timing reifyNode:node_modules/esbuild-freebsd-64 Completed in 138ms
+102 timing reifyNode:node_modules/esbuild-darwin-64 Completed in 139ms
+103 timing reifyNode:node_modules/esbuild-android-arm64 Completed in 140ms
+104 timing reifyNode:node_modules/esbuild-android-64 Completed in 141ms
+105 timing reifyNode:node_modules/@esbuild/linux-loong64 Completed in 142ms
+106 silly tarball no local data for esbuild-linux-arm64@https://registry.npmjs.org/esbuild-linux-arm64/-/esbuild-linux-arm64-0.15.7.tgz. Extracting by manifest.
+107 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 492ms
+108 timing auditReport:getReport Completed in 499ms
+109 silly audit report {
+109 silly audit report   'engine.io': [
+109 silly audit report     {
+109 silly audit report       id: 1085164,
+109 silly audit report       url: 'https://github.com/advisories/GHSA-r7qp-cfhv-p84w',
+109 silly audit report       title: 'Uncaught exception in engine.io',
+109 silly audit report       severity: 'moderate',
+109 silly audit report       vulnerable_versions: '>=4.0.0 <6.2.1',
+109 silly audit report       cwe: [Array],
+109 silly audit report       cvss: [Object]
+109 silly audit report     }
+109 silly audit report   ]
+109 silly audit report }
+110 timing metavuln:cache:get:security-advisory:engine.io:eWOSSfoip58mG1TNkS3MMq/LZHwQHmVPn/TKXtyR3O4x/ffxvtoBqzGhCiH3BI9hrYBaFrflMMdp93OeDTIXNw== Completed in 2ms
+111 http fetch GET 200 https://registry.npmjs.org/engine.io 131ms (cache miss)
+112 timing metavuln:packument:engine.io Completed in 135ms
+113 timing metavuln:load:security-advisory:engine.io:1085164 Completed in 6ms
+114 timing metavuln:cache:put:security-advisory:engine.io:eWOSSfoip58mG1TNkS3MMq/LZHwQHmVPn/TKXtyR3O4x/ffxvtoBqzGhCiH3BI9hrYBaFrflMMdp93OeDTIXNw== Completed in 56ms
+115 timing metavuln:calculate:security-advisory:engine.io:1085164 Completed in 200ms
+116 timing metavuln:cache:get:security-advisory:socket.io:vaRyRTwvVERVHB1W5C4ZHKTsx3uTa0TV3a73Jr1K2exVyNSt1+xZB9sdWopgGor5HduOFTEa1obJ102TrOs9TA== Completed in 2ms
+117 http fetch GET 200 https://registry.npmjs.org/socket.io 138ms (cache miss)
+118 timing metavuln:packument:socket.io Completed in 140ms
+119 timing metavuln:load:security-advisory:socket.io:eWOSSfoip58mG1TNkS3MMq/LZHwQHmVPn/TKXtyR3O4x/ffxvtoBqzGhCiH3BI9hrYBaFrflMMdp93OeDTIXNw== Completed in 46ms
+120 timing metavuln:cache:put:security-advisory:socket.io:vaRyRTwvVERVHB1W5C4ZHKTsx3uTa0TV3a73Jr1K2exVyNSt1+xZB9sdWopgGor5HduOFTEa1obJ102TrOs9TA== Completed in 59ms
+121 timing metavuln:calculate:security-advisory:socket.io:eWOSSfoip58mG1TNkS3MMq/LZHwQHmVPn/TKXtyR3O4x/ffxvtoBqzGhCiH3BI9hrYBaFrflMMdp93OeDTIXNw== Completed in 250ms
+122 timing auditReport:init Completed in 453ms
+123 timing reify:audit Completed in 956ms
+124 http fetch GET 200 https://registry.npmjs.org/esbuild-linux-arm64/-/esbuild-linux-arm64-0.15.7.tgz 1867ms (cache miss)
+125 timing reifyNode:node_modules/esbuild-linux-arm64 Completed in 2023ms
+126 timing reify:unpack Completed in 2026ms
+127 timing reify:unretire Completed in 0ms
+128 timing build:queue Completed in 7ms
+129 timing build:deps Completed in 8ms
+130 timing build Completed in 9ms
+131 timing reify:build Completed in 10ms
+132 timing reify:trash Completed in 30ms
+133 timing reify:save Completed in 23ms
+134 timing reify Completed in 2439ms
+135 silly ADD
+136 silly ADD
+137 silly ADD
+138 silly ADD
+139 silly ADD
+140 silly ADD
+141 silly ADD
+142 silly ADD
+143 silly ADD
+144 silly ADD
+145 silly ADD node_modules/esbuild-linux-arm64
+146 silly ADD
+147 silly ADD
+148 silly ADD
+149 silly ADD
+150 silly ADD
+151 silly ADD
+152 silly ADD
+153 silly ADD
+154 silly ADD
+155 timing command:install Completed in 2479ms
+156 verbose exit 0
+157 timing npm Completed in 2607ms
+158 info ok
